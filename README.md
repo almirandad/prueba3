@@ -12,4 +12,4 @@ cd prueba3
 docker build -t nombreimagen:etiqueta .
 
 *** Antes de iniciar el contenedor debemos ir al grupo de seguridad de la instancia y editar reglas de entrada.*** 
-Agregar laq regla de entrada tcp puerto 80 anywhere ipv4.
+Agregar laq regla de entrada tcp puerto 80 anywhere ipv4..
