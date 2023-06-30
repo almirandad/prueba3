@@ -34,26 +34,26 @@ _Este repositorio contiene un archivo Dockerfile que utiliza una imagen base de 
 - GRANT ALL PRIVILEGES ON prueba3.* TO admin;
 - FLUSH PRIVILEGES;
 
-## Grupos de seguridad:
+## Configuración de los Grupos de seguridad:
 
 **Grupos de bases de datos:**
 - ec2-rds-4
-   - _grupo de seguruidad que permite la conexión de las intancias que asociadas al sg rds-ec2-4 a la base de datos_
+   - _permite la conexión de las intancias que asociadas al sg rds-ec2-4 a la base de datos_
        - regla: salida TCP puerto 3306 origen: rds-ec2-4.
     
 - rds-ec2-4
-   - _grupo de seguridad que permite la conexión de la base de datos a las instancias que pertenecen al sg ec2-rds-4_
+   - _permite la conexión de la base de datos a las instancias que pertenecen al sg ec2-rds-4_
        - regla: entrada TCP puerto 3306 origen: ec2-rds-4.
     
 **Balanceador de carga e instancia-ec2:**
 - launch-wizard-2
-   - _se debe asociar a un grupo que le permita conectividad http para el balanceador de carga y la instancia, además el puerto ssh para conectarse a la instancia._
+   - _permite conectividad http para el balanceador de carga y la instancia, además el puerto ssh para conectarse a la instancia._
       - regla: regla de entrada http 80 origen 0.0.0.0/0.
       - regla: regla de entrada ssh 22 origen 0.0.0.0/0.
         
 **Grupos de destinos:**
 - prueba3-tg
-   - _se debe crear un target group para el balanceador de carga._
+   - _Target group para el balanceador de carga._
       - balanceador de carga de aplicación http 80 
   
 **usar el siguiente comando para extraer el contenedor desde git:**
@@ -130,21 +130,25 @@ _De esta forma crearemos una imagen en el repositorio desde el git clone anterio
 - Dejamos todos los parametros por defecto y presionamos "crear".
   
 **Crear Servicio**
-1.	 Estrategia de proveedor de capacidad # ingresamos al cluster
-2.	Configuración de implementación Servicio
-3.	Familia elegimos nuestra tarea y la version
-4.	Nombre del servicio
-5.	Tipo de servicio Réplica Tareas deseadas 1
-6.	Redes Subredes todas
-7.	Grupo de seguridad launch-wizard-1, task-sg, rds-ec2-1, ec2-rds-1
-8.	Balanceo de carga
-9.	Balanceador de carga de aplicaciones
-10.	Crear un nuevo balanceador de carga
-11.	Nombre del balanceador de carga
-12.	Crear nuevo agente de escucha puerto 80 http
-13.	Grupo de destino Crear nuevo grupo de destino elegir el nombre
-14.	Crear servicio
-Cuando se inicie el balanceador de carga debemos cambiar su security group por el de ALB-SG que tiene la regla de trafico
+- Ingresamos al cluster creado y vamos hasta servicios, presionamos en "crear".
+- seleccionamos Estrategia de proveedor de capacidad.
+- vamos hasta la seccion "Definición de tarea".
+   - En "familia" seleccionamos la tarea creada acteriormente y la Revisión.
+- Asignamos un nombre único al servicio.
+- Tareas deseadas 1
+- Subredes "por defecto".
+- Grupo de seguridad default, launch-wizard-2, rds-ec2-4, ec2-rds-4.
+- Seleccionamos "Balanceador de carga de aplicaciones".
+- Crear un nuevo balanceador de carga.
+   - Nombre del balanceador de carga
+   - Puerto 80 http
+   - Asignamos  nombre en grupos de destinos.
+- Finalmente, presionamos "Crear"
+  
+**Cuando balanceador de carga inicie, cambiar su security group por el de launch-wizard-2 que permite el trafico http.**
+
+### Finalmente, en el balanceador de carga, buscamos el dns para verificar el funcionamiento de la pagina Wordpress.
+- prueba3-1892447148.us-east-1.elb.amazonaws.com
 
 
 
