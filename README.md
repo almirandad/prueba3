@@ -92,12 +92,12 @@ _Definir una contraseña en los siguientes parametros, para fines practicos util
 - curl "https://awscli.amazonaws.com/awscli-exe-linux-x86_64.zip" -o "awscliv2.zip" 
 - unzip awscliv2.zip
   
-**Brindamos las credenciales de conexión de acceso**
+**Brindamos las credenciales de conexión de acceso las cuales obtenimos de la cuenta de aws**
 - mkdir ~/.aws/
 - vim ~/.aws/credentials
 
-_[default]
-aws_access_key_id=xxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxx
+_[default]_
+_aws_access_key_id=xxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxx_
 aws_secret_access_key=xxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxx
 aws_session_token=xxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxx_
 
