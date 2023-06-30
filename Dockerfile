@@ -1,5 +1,6 @@
 # Utiliza una imagen base Apache en su versión 7.4. Esta imagen proporciona un entorno preconfigurado con PHP y el servidor web Apache.
 FROM php:7.4-apache
+
 # Instalar extensiones de PHP requeridas por WordPress, ejecuta comandos dentro del contenedor Docker para instalar y habilitar la extensión de PHP para que WordPress se comunique con la base de datos.
 RUN docker-php-ext-install mysqli && \
     docker-php-ext-enable mysqli
@@ -10,7 +11,7 @@ RUN curl -o /tmp/latest.tar.gz -SL https://wordpress.org/latest.tar.gz && \
     rm /tmp/latest.tar.gz && \
     chown -R www-data:www-data /var/www/html/
     
-# Variables de entorno para configurar la base de datos de Wordpress,se deben dar los parámetros de la base de datos que ya esta creada.
+# Variables de entorno para configurar la base de datos de WordPress, se deben dar los parámetros de la base de datos que ya está creada.
 ENV WORDPRESS_DB_HOST=basedatosale-instance-1.cpo9aixgfro4.us-east-1.rds.amazonaws.com
 ENV WORDPRESS_DB_NAME=prueba3
 ENV WORDPRESS_DB_USER=admin
@@ -22,7 +23,7 @@ COPY apache-config.conf /etc/apache2/sites-available/000-default.conf
 # Habilitar el módulo de reescritura de Apache.
 RUN a2enmod rewrite
 
-#  el contenedor expondrá el puerto 80, que es el puerto por defecto utilizado por el servidor web Apache para escuchar las solicitudes HTTP.
+# El contenedor expondrá el puerto 80, que es el puerto por defecto utilizado por el servidor web Apache para escuchar las solicitudes HTTP.
 EXPOSE 80
 
 # Iniciar el servidor Apache en segundo plano al iniciar el contenedor.
