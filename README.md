@@ -1,11 +1,10 @@
 
+![](https://d1.awsstatic.com/acs/characters/Logos/Docker-Logo_Horizontel_279x131.b8a5c41e56b77706656d61080f6a0217a3ba356d.png)
+
 ### Intalar los siguientes comandos:
 sudo yum -y install Docker
 sudo yum -y install git
 sudo yum -y install mariadb105-server-utils.x86_64
-
-### Wordpress y Base de datos.
-![](https://www.jenx.si/wp-content/uploads/2019/10/gogs-docker-logo.png)
 
 ### usar el siguiente comando para extraer el contenedor desde git:
 git clone https://github.com/almirandad/prueba3.git
