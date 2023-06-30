@@ -3,10 +3,7 @@
 # Configuración del contenedor docker para WordPress.
 Este repositorio contiene un archivo Dockerfile que utiliza una imagen base de Apache en su versión 7.4. Esta imagen proporciona un entorno preconfigurado con PHP y el servidor web Apache que ejecuta una instancia de WordPress.
 
-
-
-
-### Intalar los siguientes comandos:
+### Requisitos previos
 sudo yum -y install Docker
 sudo yum -y install git
 sudo yum -y install mariadb105-server-utils.x86_64
