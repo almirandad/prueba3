@@ -2,7 +2,10 @@
   <img src="https://d1.awsstatic.com/acs/characters/Logos/Docker-Logo_Horizontel_279x131.b8a5c41e56b77706656d61080f6a0217a3ba356d.png" alt="Logo" width="300">
 </div>
 
-![](https://blog.back4app.com/wp-content/uploads/2023/02/docker-deploy-cover-1.webp)
+<div align="center">
+  <img src="https://miro.medium.com/v2/resize:fit:1400/0*Wq1qEQ4ELhksep5-.jpg" alt="Logo" width="300">
+</div>
+
 ![](https://miro.medium.com/v2/resize:fit:1400/0*Wq1qEQ4ELhksep5-.jpg)
 
 # Configuración del contenedor docker para WordPress.
