@@ -24,12 +24,16 @@ _Este repositorio contiene un archivo Dockerfile que utiliza una imagen base de 
 13.	En Autenticación de bases de datos elegir Autenticación con contraseña
 14.	dejar todo lo demas por defecto y hacer click en crear base de datos
 
-**Una vez creada la base de datos, nos conectamos a traves del punto de enlace que generamos con la instancia anteriormente conectarse a la base de datos**
+**Una vez creada la base de datos, nos conectamos a través del punto de enlace que generamos con la instancia anteriormente conectarse a la base de datos**
 - mysql -h Puntodeenlace -P 3306 -u admin -p
-
-**verificar grupo de seguridad de la instancia y tenga los permisos necesarios.**
-- Agregar las regla de entrada tcp puerto 80 anywhere ipv4.
-
+  
+**Crearemos una base de datos llamada prueba3 y luego con comando show podemos verificar que se creo**
+- create database prueba3;
+- show databases;
+**Finalmente, daremos los permisos para el usuario admin**
+- GRANT ALL PRIVILEGES ON prueba3.* TO admin;
+- FLUSH PRIVILEGES;
+  
 **usar el siguiente comando para extraer el contenedor desde git:**
 - git clone https://github.com/almirandad/prueba3.git
 
