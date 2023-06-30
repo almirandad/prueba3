@@ -77,7 +77,7 @@ _El Dockerfile y wp-config.php utilizan variables de entorno para configurar la 
 - define( 'DB_PASSWORD', 'contraseña de la base de datos' );
 - define( 'DB_HOST', 'la dirección del puntodeenlace de la base de datos' );
 
-_Definir una contraseña en los siguientes parametros, para fines practicos utilizamos la misma que la DB._
+_Definir una contraseña en los siguientes parámetros, para fines practicos utilizamos la misma que la DB._
 - define( 'AUTH_KEY', 'contraseña de la base de datos' );
 - define( 'SECURE_AUTH_KEY', 'contraseña de la base de datos' );
 - define( 'LOGGED_IN_KEY', 'contraseña de la base de datos' );
