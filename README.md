@@ -9,7 +9,7 @@ _Este repositorio contiene un archivo Dockerfile que utiliza una imagen base de 
 - sudo yum -y install git
 - sudo yum -y install mariadb105-server-utils.x86_64
 
-**Crear una base de datos.**
+## Crear una base de datos:
 - Crearemos una base de datos Amazon RDS.
 - Tipo Creación estándar.
 - Motor Aurora(MySQL Compatible).
@@ -31,7 +31,7 @@ _Este repositorio contiene un archivo Dockerfile que utiliza una imagen base de 
 - create database prueba3;
 - show databases;
   
-**Finalmente, daremos los permisos para el usuario admin**
+**Finalmente, daremos los permisos para el usuario admin en la base de datos creada**
 - GRANT ALL PRIVILEGES ON prueba3.* TO admin;
 - FLUSH PRIVILEGES;
   
