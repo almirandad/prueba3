@@ -72,16 +72,16 @@ _El Dockerfile y wp-config.php utilizan variables de entorno para configurar la 
 - WORDPRESS_DB_PASSWORD: contraseña de la base de datos.
   
 **wp-config.php**
-define( 'DB_NAME', 'nombre de la base de datos' );
-define( 'DB_USER', 'nombre de usuario' );
-define( 'DB_PASSWORD', 'contraseña de la base de datos' );
-define( 'DB_HOST', 'la dirección del puntodeenlace de la base de datos' );
+- define( 'DB_NAME', 'nombre de la base de datos' );
+- define( 'DB_USER', 'nombre de usuario' );
+- define( 'DB_PASSWORD', 'contraseña de la base de datos' );
+- define( 'DB_HOST', 'la dirección del puntodeenlace de la base de datos' );
 
 _Definir una contraseña unica en los siguientes parametros_
-define( 'AUTH_KEY', 'Duoc.2023' );
-define( 'SECURE_AUTH_KEY', 'Duoc.2023' );
-define( 'LOGGED_IN_KEY', 'Duoc.2023' );
-define( 'NONCE_KEY', 'Duoc.2023' );
+- define( 'AUTH_KEY', 'Duoc.2023' );
+- define( 'SECURE_AUTH_KEY', 'Duoc.2023' );
+- define( 'LOGGED_IN_KEY', 'Duoc.2023' );
+- define( 'NONCE_KEY', 'Duoc.2023' );
 
 
 **Dentro del contenedor se encontraran todas las dependencias para ejecutar Wordpress, construimos la imagen con el siguinte comando.**
