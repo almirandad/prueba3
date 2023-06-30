@@ -54,7 +54,7 @@ _Este repositorio contiene un archivo Dockerfile que utiliza una imagen base de 
 **Grupos de destinos:**
 - prueba3-tg
    - _Target group para el balanceador de carga._
-      - balanceador de carga de aplicación http 80 
+      - Balanceador de carga de aplicación http 80 
   
 **usar el siguiente comando para extraer el contenedor desde git:**
 - git clone https://github.com/almirandad/prueba3.git
@@ -63,7 +63,7 @@ _Este repositorio contiene un archivo Dockerfile que utiliza una imagen base de 
 - cd prueba3
 
 **Variables de entorno:** 
-_El Dockerfile y wp-config.php utilizan variables de entorno para configurar la base de datos de WordPress. Hay que asegúrate de proporcionar los valores correctos antes de construir y ejecutar el contenedor. Las variables de entorno son las siguientes:_
+_El Dockerfile y wp-config.php utilizan variables de entorno para configurar la base de datos de WordPress. Hay que asegurase de proporcionar los valores correctos antes de construir y ejecutar el contenedor. Las variables de entorno son las siguientes:_
 
 **Dockerfile**
 - WORDPRESS_DB_HOST: la dirección del puntodeenlace de la base de datos.
@@ -116,23 +116,23 @@ _De esta forma crearemos una imagen en el repositorio desde el git clone anterio
 
 ### Luego, crearemos una definición de tarea en ECS para crear el cluster con la imagen de repositorio.
 - Nueva definición de tarea.
-- Asignamos un nombre de familia de definición de tarea "unico".
+- Asignamos un nombre de familia de definición de tarea "único".
 - Definimos un nombre y la uri de la imagen que cargamos en el repositorio.
 - Dejamos por defecto el puerto 80 HTTP.
 - Presionamos "Siguiente".
 - Dejamos "AWS FARGATE" por defecto.
 - En rol de tarea y rol de ejecución de tareas seleccionamos "labrole".
-- Almacenamiento efímero seleecionamos el valor minímo 21gb.
+- Almacenamiento efímero seleccionamos el valor minímo 21gb.
 - Presionamos "siguiente" y luego, "crear".
 
 ### Vamos hasta la sección crear clúster.
 - Asignamos un nombre.
-- Dejamos todos los parametros por defecto y presionamos "crear".
+- Dejamos todos los parámetros por defecto y presionamos "crear".
   
 **Crear Servicio**
 - Ingresamos al cluster creado y vamos hasta servicios, presionamos en "crear".
 - seleccionamos Estrategia de proveedor de capacidad.
-- vamos hasta la seccion "Definición de tarea".
+- vamos hasta la sección "Definición de tarea".
    - En "familia" seleccionamos la tarea creada acteriormente y la Revisión.
 - Asignamos un nombre único al servicio.
 - Tareas deseadas 1
@@ -145,7 +145,7 @@ _De esta forma crearemos una imagen en el repositorio desde el git clone anterio
    - Asignamos  nombre en grupos de destinos.
 - Finalmente, presionamos "Crear"
   
-**Cuando balanceador de carga inicie, cambiar su security group por el de launch-wizard-2 que permite el trafico http.**
+**Cuando balanceador de carga inicie, cambiar su security group por el de launch-wizard-2 que permite el tráfico http.**
 
 ### Finalmente, en el balanceador de carga, buscamos el dns para verificar el funcionamiento de la pagina Wordpress.
 - prueba3-1892447148.us-east-1.elb.amazonaws.com
