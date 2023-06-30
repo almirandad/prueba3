@@ -111,8 +111,8 @@ _De esta forma crearemos una imagen en el repositorio desde el git clone anterio
 - docker build -t prueba3 .
    - Cuando se complete la creación, etiquete la imagen para poder enviarla a este repositorio:
 - docker tag prueba3:latest 362607667549.dkr.ecr.us-east-1.amazonaws.com/prueba3:latest
-- Ejecute el siguiente comando para enviar esta imagen al repositorio de AWS recién creado:
-   - docker push 362607667549.dkr.ecr.us-east-1.amazonaws.com/prueba3:latest
+   - Ejecute el siguiente comando para enviar esta imagen al repositorio de AWS recién creado:
+- docker push 362607667549.dkr.ecr.us-east-1.amazonaws.com/prueba3:latest
 
 
 
