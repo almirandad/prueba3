@@ -8,11 +8,6 @@ _Este repositorio contiene un archivo Dockerfile que utiliza una imagen base de 
 - sudo yum -y install Docker
 - sudo yum -y install git
 - sudo yum -y install mariadb105-server-utils.x86_64
-
-## grupos de seguridad instancia:
-- launch-wizard-2
-   - _grupo de seguruidad que permite conectividad ssh y http a la instancia-ec2_
-       - regla: Entrada http puerto 80 / ssh puerto 22 origen: 0.0.0.0/0.
   
 ## Crear una base de datos:
 - Crearemos una base de datos Amazon RDS.
@@ -40,7 +35,7 @@ _Este repositorio contiene un archivo Dockerfile que utiliza una imagen base de 
 - FLUSH PRIVILEGES;
 
 
-## grupos de seguridad:
+## Grupos de seguridad:
 
 **Grupos de bases de datos:**
 - ec2-rds-4
@@ -51,9 +46,9 @@ _Este repositorio contiene un archivo Dockerfile que utiliza una imagen base de 
    - _grupo de seguridad que permite la conexión de la base de datos a las instancias que pertenecen al sg ec2-rds-4_
        - regla: entrada TCP puerto 3306 origen: ec2-rds-4.
     
-**balanceador de carga y instancia-ec2:**
+**Balanceador de carga e instancia-ec2:**
 - launch-wizard-2
-   - _se debe asociar a un grupo que le permita conectividad http_
+   - _se debe asociar a un grupo que le permita conectividad http para el balanceador de carga y la instancia, además el puerto ssh para conectarse a la instancia._
       - regla: regla de entrada http 80 origen 0.0.0.0/0.
       - regla: regla de entrada ssh 22 origen 0.0.0.0/0.
         
