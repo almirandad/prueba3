@@ -4,7 +4,7 @@
 _Este repositorio contiene un archivo Dockerfile que utiliza una imagen base de Apache en su versión 7.4. Esta imagen proporciona un entorno preconfigurado con PHP y el servidor web Apache que ejecuta una instancia de WordPress._
 
 **Requisitos previos** 
-(instalar Docker, git y mariadb e iniciamos cada servicios segun sea necesario).
+(instalar Docker, git y mariadb e iniciamos cada servicios según sea necesario).
 - sudo yum -y install Docker
 - sudo yum -y install git
 - sudo yum -y install mariadb105-server-utils.x86_64
@@ -12,11 +12,11 @@ _Este repositorio contiene un archivo Dockerfile que utiliza una imagen base de 
 **Crear una base de datos.**
 - Crearemos una base de datos Amazon RDS.
 - Tipo Creación estándar.
-- Motor Aurora(MySQL Compatible)
+- Motor Aurora(MySQL Compatible).
 - Plantilla de desarrollo y pruebas.
-6.	Identificador del clúster de base de datos debemos escribir un nombre a eleccion
-7.	En credenciales elegir el nombre de usuario maestro (como es test dejaremos admin)
-8.	Contraseña maestra elegir una debe tener al menos 8 caracteres(esto se utilizara para conectarnos a la bd luego)
+- En dentificador del clúster de base de datos damos un nombre para identificar la base de datos.
+- En credenciales se ingresa el nombre de usuario para administrar la base de datos
+- Se asigna una contraseña para conectarse a la base de datos.
 9.	En Cluster storage configuration elegir Aurora Standard (esto es para los costos bajos)
 10.	En Configuración de la instancia elegir Clases con ráfagas e elegir la que consideremos apropiada la small es una bd con 2GB de memoria algo para un sitio estandar con no tanto requisito o flujo de usuario
 11.	En Disponibilidad y durabilidad si deseo crear algo resilente a fallos elegir crear nodo si no es el caso y es solo test elegir No crear una réplica de Aurora
