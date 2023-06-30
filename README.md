@@ -41,20 +41,13 @@ _Este repositorio contiene un archivo Dockerfile que utiliza una imagen base de 
 - cd prueba3
 
 **Variables de entorno**
+
 _El contenedor utiliza variables de entorno para configurar la base de datos de WordPress. Hay que asegúrate de proporcionar los valores correctos antes de construir y ejecutar el contenedor. Las variables de entorno son las siguientes:_
 
-- WORDPRESS_DB_HOST: la dirección del host de la base de datos de WordPress.
-- WORDPRESS_DB_NAME: el nombre de la base de datos de WordPress.
-- WORDPRESS_DB_USER: el nombre de usuario de la base de datos de WordPress.
-- WORDPRESS_DB_PASSWORD: la contraseña de la base de datos de WordPress.
-
-
-
-
-
-
-
-
+- WORDPRESS_DB_HOST: la dirección del puntodeenlace de la base de datos.
+- WORDPRESS_DB_NAME: el nombre de la base de datos.
+- WORDPRESS_DB_USER: el nombre de usuario.
+- WORDPRESS_DB_PASSWORD: la contraseña de la base de datos.
 
 **Dentro del contenedor se encontraran todas las dependencias para ejecutar Wordpress, construimos la imagen con el siguinte comando.**
 - docker build -t prueba3:v1 .
