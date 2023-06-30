@@ -34,7 +34,6 @@ _Este repositorio contiene un archivo Dockerfile que utiliza una imagen base de 
 - GRANT ALL PRIVILEGES ON prueba3.* TO admin;
 - FLUSH PRIVILEGES;
 
-
 ## Grupos de seguridad:
 
 **Grupos de bases de datos:**
