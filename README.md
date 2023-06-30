@@ -9,6 +9,12 @@ _Este repositorio contiene un archivo Dockerfile que utiliza una imagen base de 
 - sudo yum -y install git
 - sudo yum -y install mariadb105-server-utils.x86_64
 
+## grupos de seguridad instancia:
+- launch-wizard-2
+   - _grupo de seguruidad que permite conectividad ssh y http a la instancia-ec2_
+       - regla: Entrada http puerto 80 / ssh puerto 22 origen: 0.0.0.0/0.
+  
+
 ## Crear una base de datos:
 - Crearemos una base de datos Amazon RDS.
 - Tipo Creación estándar.
@@ -33,6 +39,15 @@ _Este repositorio contiene un archivo Dockerfile que utiliza una imagen base de 
 **Brindamos los permisos para el usuario admin en la base de datos creada**
 - GRANT ALL PRIVILEGES ON prueba3.* TO admin;
 - FLUSH PRIVILEGES;
+
+
+
+
+
+
+
+
+
   
 **usar el siguiente comando para extraer el contenedor desde git:**
 - git clone https://github.com/almirandad/prueba3.git
@@ -57,6 +72,10 @@ _El contenedor utiliza variables de entorno para configurar la base de datos de 
 **se puede acceder a wordpress a traves la ip**
 - http://ippublica:80
 
+
+
+
+
 ## grupos de seguridad:
 
 **Grupos de bases de datos:**
@@ -76,8 +95,6 @@ _El contenedor utiliza variables de entorno para configurar la base de datos de 
 - prueba3-tg
    - _se debe crear un target group para el balanceador de carga_
       - balanceador de carga de aplicación http 80 
-
-
 
 
 
