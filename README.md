@@ -6,11 +6,11 @@ Este repositorio contiene un archivo Dockerfile que utiliza una imagen base de A
 #### Requisitos previos 
 (instalar Docker, git y mariadb) 
 - sudo yum -y install Docker
-sudo yum -y install git
-sudo yum -y install mariadb105-server-utils.x86_64
+- sudo yum -y install git
+- sudo yum -y install mariadb105-server-utils.x86_64
 
 #### verificar grupo de seguridad de la instancia y tenga los permisos necesarios.
-Agregar las regla de entrada tcp puerto 80 anywhere ipv4.
+- Agregar las regla de entrada tcp puerto 80 anywhere ipv4.
 
 
 #### usar el siguiente comando para extraer el contenedor desde git:
