@@ -2,6 +2,9 @@
   <img src="https://d1.awsstatic.com/acs/characters/Logos/Docker-Logo_Horizontel_279x131.b8a5c41e56b77706656d61080f6a0217a3ba356d.png" alt="Logo" width="300">
 </div>
 
+![](https://blog.back4app.com/wp-content/uploads/2023/02/docker-deploy-cover-1.webp)
+
+
 # Configuración del contenedor docker para WordPress.
 Este repositorio contiene un archivo Dockerfile que utiliza una imagen base de Apache en su versión 7.4. Esta imagen proporciona un entorno preconfigurado con PHP y el servidor web Apache que ejecuta una instancia de WordPress.
 
