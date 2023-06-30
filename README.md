@@ -165,33 +165,3 @@ _De esta forma crearemos una imagen en el repositorio desde el git clone anterio
 
 
 
-
-
-
-
-
-
-**Dentro del contenedor se encontraran todas las dependencias para ejecutar Wordpress, construimos la imagen con el siguinte comando.**
-- docker build -t prueba3:v1 .
-
-**Para correr la imagen creada, utilizaremos el siguiente comando.**
-- docker run -d -p 80:80 --name prueba3run prueba3:v1
-  
-**se puede acceder a wordpress a traves la ip**
-- http://ippublica:80
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
