@@ -1,4 +1,3 @@
-
 # Utiliza una imagen base Apache en su versión 7.4. Esta imagen proporciona un entorno preconfigurado con PHP y el servidor web Apache.
 FROM php:7.4-apache
 
@@ -18,15 +17,15 @@ RUN curl -o /tmp/latest.tar.gz -SL https://wordpress.org/latest.tar.gz && \
     rm /tmp/latest.tar.gz && \
     chown -R www-data:www-data /var/www/html/
 
-# Copiar archivo de configuración de Apache#
+# Copiar archivo de configuración de Apache.
 COPY apache-config.conf /etc/apache2/sites-available/000-default.conf
 
-# Habilitar el módulo de reescritura de Apache#
+# Habilitar el módulo de reescritura de Apache.
 RUN a2enmod rewrite
 
-#  el contenedor expondrá el puerto 80, que es el puerto por defecto
-utilizado por el servidor web Apache para escuchar las solicitudes HTTP.#
+#  el contenedor expondrá el puerto 80, que es el puerto por defecto utilizado por el servidor web Apache para escuchar las solicitudes HTTP.
 EXPOSE 80
 
-# Iniciar el servidor Apache en segundo plano al iniciar el contenedor#
+# Iniciar el servidor Apache en segundo plano al iniciar el contenedor.
 CMD ["apache2-foreground"]
+
