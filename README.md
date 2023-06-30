@@ -108,16 +108,11 @@ _aws_session_token=xxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxx_
 _De esta forma crearemos una imagen en el repositorio desde el git clone anteriormente descargado._
 
 - aws ecr get-login-password --region us-east-1 | docker login --username AWS --password-stdin 362607667549.dkr.ecr.us-east-1.amazonaws.com
-Nota: Si recibe un error al utilizar AWS CLI, asegúrese de tener instaladas las últimas versiones de AWS CLI y Docker.
-Cree una imagen de Docker con el siguiente comando. Para obtener información sobre cómo crear un archivo de Docker desde cero, consulte las instrucciones aquí . Puede omitir este paso si ya se creó la imagen:
-
 - docker build -t prueba3 .
-Cuando se complete la creación, etiquete la imagen para poder enviarla a este repositorio:
-
+   - Cuando se complete la creación, etiquete la imagen para poder enviarla a este repositorio:
 - docker tag prueba3:latest 362607667549.dkr.ecr.us-east-1.amazonaws.com/prueba3:latest
-Ejecute el siguiente comando para enviar esta imagen al repositorio de AWS recién creado:
-
-- docker push 362607667549.dkr.ecr.us-east-1.amazonaws.com/prueba3:latest
+- Ejecute el siguiente comando para enviar esta imagen al repositorio de AWS recién creado:
+   - docker push 362607667549.dkr.ecr.us-east-1.amazonaws.com/prueba3:latest
 
 
 
