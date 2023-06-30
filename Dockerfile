@@ -15,7 +15,6 @@ RUN curl -o /tmp/latest.tar.gz -SL https://wordpress.org/latest.tar.gz && \
 COPY apache-config.conf /etc/apache2/sites-available/000-default.conf
 
 # Variables de entorno para configurar la base de datos de WordPress, se deben dar los parámetros de la base de datos que ya esta creada.
-
 ENV WORDPRESS_DB_HOST=basedatosale-instance-1.cpo9aixgfro4.us-east-1.rds.amazonaws.com
 ENV WORDPRESS_DB_NAME=prueba3
 ENV WORDPRESS_DB_USER=admin
