@@ -114,6 +114,57 @@ _De esta forma crearemos una imagen en el repositorio desde el git clone anterio
    - Ejecute el siguiente comando para enviar esta imagen al repositorio de AWS recién creado:
 - docker push 362607667549.dkr.ecr.us-east-1.amazonaws.com/prueba3:latest
 
+### Luego, crearemos una definición de tarea en ECS para crear el cluster con la imagen de repositorio.
+- Nueva definición de tarea.
+- Asignamos un nombre de familia de definición de tarea "unico".
+- Definimos un nombre y la uri de la imagen que cargamos en el repositorio.
+- Dejamos por defecto el puerto 80 HTTP.
+- Presionamos "Siguiente".
+- Dejamos "AWS FARGATE" por defecto.
+- En rol de tarea y rol de ejecución de tareas seleccionamos "labrole".
+- Almacenamiento efímero seleecionamos el valor minímo 21gb.
+- Presionamos "siguiente" y luego, "crear".
+
+### Vamos hasta la sección crear clúster.
+- Asignamos un nombre.
+- Dejamos todos los parametros por defecto y presionamos "crear".
+  
+**Crear Servicio**
+1.	 Estrategia de proveedor de capacidad # ingresamos al cluster
+2.	Configuración de implementación Servicio
+3.	Familia elegimos nuestra tarea y la version
+4.	Nombre del servicio
+5.	Tipo de servicio Réplica Tareas deseadas 1
+6.	Redes Subredes todas
+7.	Grupo de seguridad launch-wizard-1, task-sg, rds-ec2-1, ec2-rds-1
+8.	Balanceo de carga
+9.	Balanceador de carga de aplicaciones
+10.	Crear un nuevo balanceador de carga
+11.	Nombre del balanceador de carga
+12.	Crear nuevo agente de escucha puerto 80 http
+13.	Grupo de destino Crear nuevo grupo de destino elegir el nombre
+14.	Crear servicio
+Cuando se inicie el balanceador de carga debemos cambiar su security group por el de ALB-SG que tiene la regla de trafico
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
 
 
 **Dentro del contenedor se encontraran todas las dependencias para ejecutar Wordpress, construimos la imagen con el siguinte comando.**
