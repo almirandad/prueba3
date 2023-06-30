@@ -51,9 +51,9 @@ _Este repositorio contiene un archivo Dockerfile que utiliza una imagen base de 
       - regla: regla de entrada http 80 origen 0.0.0.0/0.
       - regla: regla de entrada ssh 22 origen 0.0.0.0/0.
         
-**Grupos de destinos**
+**Grupos de destinos:**
 - prueba3-tg
-   - _se debe crear un target group para el balanceador de carga_
+   - _se debe crear un target group para el balanceador de carga._
       - balanceador de carga de aplicación http 80 
   
 **usar el siguiente comando para extraer el contenedor desde git:**
@@ -63,12 +63,18 @@ _Este repositorio contiene un archivo Dockerfile que utiliza una imagen base de 
 - cd prueba3
 
 **Variables de entorno:** 
-_El contenedor utiliza variables de entorno para configurar la base de datos de WordPress. Hay que asegúrate de proporcionar los valores correctos antes de construir y ejecutar el contenedor. Las variables de entorno son las siguientes:_
+_El Dockerfile y wp-config.php utilizan variables de entorno para configurar la base de datos de WordPress. Hay que asegúrate de proporcionar los valores correctos antes de construir y ejecutar el contenedor. Las variables de entorno son las siguientes:_
 
+**Dockerfile**
 - WORDPRESS_DB_HOST: la dirección del puntodeenlace de la base de datos.
 - WORDPRESS_DB_NAME: el nombre de la base de datos.
 - WORDPRESS_DB_USER: el nombre de usuario.
 - WORDPRESS_DB_PASSWORD: la contraseña de la base de datos.
+
+**wp-config.php**
+
+
+
 
 **Dentro del contenedor se encontraran todas las dependencias para ejecutar Wordpress, construimos la imagen con el siguinte comando.**
 - docker build -t prueba3:v1 .
@@ -78,6 +84,8 @@ _El contenedor utiliza variables de entorno para configurar la base de datos de 
   
 **se puede acceder a wordpress a traves la ip**
 - http://ippublica:80
+
+
 
 
 
