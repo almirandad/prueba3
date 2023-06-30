@@ -61,12 +61,6 @@ _Este repositorio contiene un archivo Dockerfile que utiliza una imagen base de 
 - prueba3-tg
    - _se debe crear un target group para el balanceador de carga_
       - balanceador de carga de aplicación http 80 
-
-
-
-
-
-
   
 **usar el siguiente comando para extraer el contenedor desde git:**
 - git clone https://github.com/almirandad/prueba3.git
