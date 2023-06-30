@@ -14,12 +14,12 @@ _Este repositorio contiene un archivo Dockerfile que utiliza una imagen base de 
 - Tipo Creación estándar.
 - Motor Aurora(MySQL Compatible).
 - Plantilla de desarrollo y pruebas.
-- En dentificador del clúster de base de datos damos un nombre para identificar la base de datos.
+- En identificador del clúster de base de datos damos un nombre para identificar la base de datos.
 - En credenciales se ingresa el nombre de usuario para administrar la base de datos
 - Se asigna una contraseña para conectarse a la base de datos.
 - En Configuración de la instancia para este ejercicio, la de menor rendimiento.
 - Seleccionamos No crear una réplica.
-- En Conectividad seleccionamos Conectarse a un recurso informático de EC2 indicando la instancia que esta habilitada.
+- En Conectividad seleccionamos Conectarse a un recurso informático de EC2 indicando la instancia que está habilitada.
 - Selecionamos autenticación con contraseña.
 - Finalmente, presionamos crear base de datos.
 
@@ -38,7 +38,7 @@ _Este repositorio contiene un archivo Dockerfile que utiliza una imagen base de 
 
 **Grupos de bases de datos:**
 - ec2-rds-4
-   - _permite la conexión de las intancias que asociadas al sg rds-ec2-4 a la base de datos_
+   - _permite la conexión de las intancias que están asociadas al sg rds-ec2-4 a la base de datos_
        - regla: salida TCP puerto 3306 origen: rds-ec2-4.
     
 - rds-ec2-4
