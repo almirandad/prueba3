@@ -1,4 +1,4 @@
-## Pasos para construir y ejecutar un contenedor Docker ##
+## Pasos para construir y ejecutar un contenedor. ##
 ![](https://miro.medium.com/v2/resize:fit:1400/0*Wq1qEQ4ELhksep5-.jpg)
 
 ## Configuración del contenedor docker para WordPress.
