@@ -77,11 +77,33 @@ _El Dockerfile y wp-config.php utilizan variables de entorno para configurar la 
 - define( 'DB_PASSWORD', 'contraseña de la base de datos' );
 - define( 'DB_HOST', 'la dirección del puntodeenlace de la base de datos' );
 
-_Definir una contraseña unica en los siguientes parametros_
-- define( 'AUTH_KEY', 'Duoc.2023' );
-- define( 'SECURE_AUTH_KEY', 'Duoc.2023' );
-- define( 'LOGGED_IN_KEY', 'Duoc.2023' );
-- define( 'NONCE_KEY', 'Duoc.2023' );
+_Definir una contraseña en los siguientes parametros, para fines practicos utilizamos la misma que la DB._
+- define( 'AUTH_KEY', 'contraseña de la base de datos' );
+- define( 'SECURE_AUTH_KEY', 'contraseña de la base de datos' );
+- define( 'LOGGED_IN_KEY', 'contraseña de la base de datos' );
+- define( 'NONCE_KEY', 'contraseña de la base de datos' );
+
+### Crear repositorio ECR.
+- creamos un repositorio privado.
+- Asignamos un nombre.
+- Presionamos "crear repositorio"
+
+**En la instancia-ec2 instalamos aws tools**
+- curl "https://awscli.amazonaws.com/awscli-exe-linux-x86_64.zip" -o "awscliv2.zip" 
+- unzip awscliv2.zip 
+
+**Brindamos las credenciales de conexión de acceso**
+- mkdir ~/.aws/
+- vim ~/.aws/credentials
+
+_[default]
+aws_access_key_id=xxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxx
+aws_secret_access_key=xxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxx
+aws_session_token=xxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxx_
+
+
+
+
 
 
 **Dentro del contenedor se encontraran todas las dependencias para ejecutar Wordpress, construimos la imagen con el siguinte comando.**
