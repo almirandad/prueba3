@@ -67,11 +67,15 @@ _El Dockerfile y wp-config.php utilizan variables de entorno para configurar la 
 
 **Dockerfile**
 - WORDPRESS_DB_HOST: la dirección del puntodeenlace de la base de datos.
-- WORDPRESS_DB_NAME: el nombre de la base de datos.
-- WORDPRESS_DB_USER: el nombre de usuario.
-- WORDPRESS_DB_PASSWORD: la contraseña de la base de datos.
+- WORDPRESS_DB_NAME: nombre de la base de datos.
+- WORDPRESS_DB_USER: nombre de usuario.
+- WORDPRESS_DB_PASSWORD: contraseña de la base de datos.
 
 **wp-config.php**
+define( 'DB_NAME', 'nombre de la base de datos' );
+define( 'DB_USER', 'nombre de usuario' );
+define( 'DB_PASSWORD', 'contraseña de la base de datos' );
+define( 'DB_HOST', 'la dirección del puntodeenlace de la base de datos' );
 
 
 
