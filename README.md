@@ -30,6 +30,7 @@ _Este repositorio contiene un archivo Dockerfile que utiliza una imagen base de 
 **Crearemos una base de datos llamada prueba3 y luego con comando show podemos verificar que se creo**
 - create database prueba3;
 - show databases;
+  
 **Finalmente, daremos los permisos para el usuario admin**
 - GRANT ALL PRIVILEGES ON prueba3.* TO admin;
 - FLUSH PRIVILEGES;
