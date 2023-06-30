@@ -1,19 +1,3 @@
-#crear el siguiente archivo necesario para crear dockerfile#
-<VirtualHost *:80>
-    ServerName localhost
-    DocumentRoot /var/www/html
-
-    <Directory /var/www/html>
-        Options Indexes FollowSymLinks
-        AllowOverride All
-        Require all granted
-    </Directory>
-
-    ErrorLog ${APACHE_LOG_DIR}/error.log
-    CustomLog ${APACHE_LOG_DIR}/access.log combined
-</VirtualHost>
-
-[root@ip-172-31-16-149 prueba3]# cat wp-config.php
 <?php
 define( 'DB_NAME', 'prueba3' );
 define( 'DB_USER', 'admin' );
