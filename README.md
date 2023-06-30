@@ -53,12 +53,12 @@ _Este repositorio contiene un archivo Dockerfile que utiliza una imagen base de 
 ## grupos de seguridad:
 
 **Grupos de bases de datos:**
-- **ec2-rds-4**    
+-**ec2-rds-4**    
 _grupo de seguruidad que permite la conexión de las intancias que asociadas al sg rds-ec2-4 a la base de datos_
 **regla:** salida TCP puerto 3306 origen: rds-ec2-4
-- **rds-ec2-4**
+- rds-ec2-4**
 _grupo de seguridad que permite la conexión de la base de datos a las instancias que pertenecen al sg ec2-rds-4_
-**regla:** entrada TCP puerto 3306 origen: ec2-rds-4
+regla: entrada TCP puerto 3306 origen: ec2-rds-4
 
 
 
