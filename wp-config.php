@@ -1,15 +1,27 @@
+#crear el siguiente archivo necesario para crear dockerfile#
+<VirtualHost *:80>
+    ServerName localhost
+    DocumentRoot /var/www/html
+
+    <Directory /var/www/html>
+        Options Indexes FollowSymLinks
+        AllowOverride All
+        Require all granted
+    </Directory>
+
+    ErrorLog ${APACHE_LOG_DIR}/error.log
+    CustomLog ${APACHE_LOG_DIR}/access.log combined
+</VirtualHost>
+
+[root@ip-172-31-16-149 prueba3]# cat wp-config.php
 <?php
-# Nombbre de la tabla de base de datos.
 define( 'DB_NAME', 'prueba3' );
-# Usuario definido en la base de datos.
 define( 'DB_USER', 'admin' );
-# Contraseña de la base de datos.
 define( 'DB_PASSWORD', 'Duoc.2023' );
-# Punto de enlace de la base de datos.
 define( 'DB_HOST', 'basedatosale.cluster-ro-cpo9aixgfro4.us-east-1.rds.amazonaws.com' );
 define( 'DB_CHARSET', 'utf8' );
 define( 'DB_COLLATE', '' );
-# Clave de autenticación
+
 define( 'AUTH_KEY', 'Duoc.2023' );
 define( 'SECURE_AUTH_KEY', 'Duoc.2023' );
 define( 'LOGGED_IN_KEY', 'Duoc.2023' );
