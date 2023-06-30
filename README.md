@@ -41,7 +41,7 @@ _Este repositorio contiene un archivo Dockerfile que utiliza una imagen base de 
 - cd prueba3
 
 **Variables de entorno:**
-_El contenedor utiliza variables de entorno para configurar la base de datos de WordPress. Hay que asegúrate de proporcionar los valores correctos antes de construir y ejecutar el contenedor. Las variables de entorno son las siguientes:_
+* _El contenedor utiliza variables de entorno para configurar la base de datos de WordPress. Hay que asegúrate de proporcionar los valores correctos antes de construir y ejecutar el contenedor. Las variables de entorno son las siguientes:_
 
 - WORDPRESS_DB_HOST: la dirección del puntodeenlace de la base de datos.
 - WORDPRESS_DB_NAME: el nombre de la base de datos.
