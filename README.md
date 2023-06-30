@@ -14,7 +14,7 @@ _Este repositorio contiene un archivo Dockerfile que utiliza una imagen base de 
    - _grupo de seguruidad que permite conectividad ssh y http a la instancia-ec2_
        - regla: Entrada http puerto 80 / ssh puerto 22 origen: 0.0.0.0/0.
   
-
+j
 ## Crear una base de datos:
 - Crearemos una base de datos Amazon RDS.
 - Tipo Creación estándar.
