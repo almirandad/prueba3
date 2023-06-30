@@ -40,7 +40,27 @@ _Este repositorio contiene un archivo Dockerfile que utiliza una imagen base de 
 - FLUSH PRIVILEGES;
 
 
+## grupos de seguridad:
 
+**Grupos de bases de datos:**
+- ec2-rds-4
+   - _grupo de seguruidad que permite la conexión de las intancias que asociadas al sg rds-ec2-4 a la base de datos_
+       - regla: salida TCP puerto 3306 origen: rds-ec2-4.
+    
+- rds-ec2-4
+   - _grupo de seguridad que permite la conexión de la base de datos a las instancias que pertenecen al sg ec2-rds-4_
+       - regla: entrada TCP puerto 3306 origen: ec2-rds-4.
+    
+**balanceador de carga y instancia-ec2:**
+- launch-wizard-2
+   - _se debe asociar a un grupo que le permita conectividad http_
+      - regla: regla de entrada http 80 origen 0.0.0.0/0.
+      - regla: regla de entrada ssh 22 origen 0.0.0.0/0.
+        
+**Grupos de destinos**
+- prueba3-tg
+   - _se debe crear un target group para el balanceador de carga_
+      - balanceador de carga de aplicación http 80 
 
 
 
@@ -75,25 +95,7 @@ _El contenedor utiliza variables de entorno para configurar la base de datos de 
 
 
 
-## grupos de seguridad:
 
-**Grupos de bases de datos:**
-- ec2-rds-4
-   - _grupo de seguruidad que permite la conexión de las intancias que asociadas al sg rds-ec2-4 a la base de datos_
-       - regla: salida TCP puerto 3306 origen: rds-ec2-4.
-    
-- rds-ec2-4
-   - _grupo de seguridad que permite la conexión de la base de datos a las instancias que pertenecen al sg ec2-rds-4_
-       - regla: entrada TCP puerto 3306 origen: ec2-rds-4.
-    
-**Grupos de balanceador de carga:**
-- launch-wizard-2
-   - _se debe asociar a un grupo que le permita conectividad http_
-      - regla: regla de entrada http 80 origen 0.0.0.0/0.
-    
-- prueba3-tg
-   - _se debe crear un target group para el balanceador de carga_
-      - balanceador de carga de aplicación http 80 
 
 
 
